@@ -1,0 +1,25 @@
+First program using xml config file
+
+Step-1: create one POJO class or java bean class
+step-2: create xml config file with .xml extension (create in another package -> .xml)
+step-3: add xml schema file in .xml file (spring configuration xml schema) -> which tells to the IOC to create object of
+        this class
+        <?xml version="1.0" encoding="UTF-8"?>
+        <beans xmlns="http://www.springframework.org/schema/beans"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+            <!-- bean definitions here -->
+        </beans>
+step-4: Object will create when we call IOC container
+step-5: Add jar file into external library
+        Spring-beans-xxx.jars       xxx indicates version
+        spring-core-xxx.jars
+        spring-context-xxx.jars
+        spring-logging-xxx.jars
+        spring-expression-xxx.jars
+step-6:  Create package main with Main.java
+        String config_file = "type here applicationContext.xml location";
+        ApplicationContext context = new ClassPthXmlApplicationContext(config_file);
+        Student std = (Student) context.getBeans("type id here"); -> it will return object so we type casted
+        std.display();

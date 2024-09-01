@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean class="com.sixml.pojo.Address" id="addId">
+        <property name="address" value="shiv nagar" />
+        <property name="city" value="Mumbai" />
+        <property name="state" value="Maharashtra" />
+
+    </bean>
+    <bean class="com.sixml.pojo.Student" id="stdId">
+        <property name="name" value="Shiv"/>
+        <property name="roll_no" value="12"/>
+        <property name="cllg_no" value="MUMU"/>
+        <property name="address" ref="addId"/>
+    </bean>
+
+</beans>

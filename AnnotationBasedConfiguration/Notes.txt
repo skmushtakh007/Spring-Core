@@ -1,0 +1,37 @@
+step-1: create one pojo class.
+step-2: Annotate pojo class with @Component.
+        = The "@Component" annotation in spring is used to declare a class
+          as a Spring bean, which is a managed component in the Spring
+          application context.
+        = It helps Spring automatically detect and manage these beans during
+          application startup, making them available for dependency injection
+          and other Spring features.
+step-4: Object of class will be created with small case name of class.
+        EX- Student -> student
+step-5: compile and run. we will get No bean named 'students' available.
+        So that scan pojo class bean and getbean  will get students object.
+        for that we use <context:component-scan base-package="package of pojo class">
+        Q. How it will work?
+        = In a Spring XML configuration file, <context:component-scan> is used to instruct
+        the spring framework to perform component scanning.
+        = It scans specified packages in the applications classpath for classes
+        annotated with annotations like @Component, @Service, @Repository, and
+        @Controller.
+        These discovered classes are then registered as Spring beans, enabling automatic
+        dependency injection and other Spring features.
+step-6: In result you will get default values because we are not given any value there.
+step -7: Use @Value annotation to set values to the properties int pojo class.
+         = The @Value annotation in Spring is used to inject values into
+         Spring bean fields or methos
+         = @Value is mostly used to inject values from external sources.
+         (ex. properties files or environment variables)
+
+
+
+For java Configuration file
+(Here we are using @Configuration annotation in java-config.java instead of using xml <context:Component-scan >)
+=> @ComponentScan is used to instruct the Spring framework to perform
+   component scanning.
+=> It will scans the specified packages for the classes annotated with annotations
+   like @Component, @Service, @Repository, and @Controller and then registered
+   as Spring beans for further use.

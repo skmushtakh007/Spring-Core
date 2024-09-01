@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<!--    before running main method specify which autowiring are you using-->
+    <bean class="com.xmlbasedautowiring.pojo.Address" id="addId" >
+        <property name="house_no" value="12,Kalpataru,Banglore" />
+        <property name="city" value="Banglore" />
+        <property name="state" value="Karnatka" />
+    </bean>
+
+    <bean class="com.xmlbasedautowiring.pojo.Students" id="stdId">
+        <property name="name" value="ABC"/>
+        <property name="cllg_name" value="MUMU" />
+        <property name="roll_no" value="12" />
+    </bean>
+
+
+
+
+
+
+
+
+
+
+
+
+</beans>

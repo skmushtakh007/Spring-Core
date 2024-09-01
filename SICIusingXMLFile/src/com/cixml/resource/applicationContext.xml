@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+
+    <bean class="com.cixml.pojo.Address" id="addId">
+        <constructor-arg value="samta 123 house" />
+        <constructor-arg value="pune" />
+        <constructor-arg value="Mah" />
+    </bean>
+
+    <bean class="com.cixml.pojo.Student" id="stdId">
+        <constructor-arg value="Mustakh" />
+        <constructor-arg value="112" />
+        <constructor-arg value="MuMu" />
+        <constructor-arg ref="addId" />
+    </bean>
+
+</beans>

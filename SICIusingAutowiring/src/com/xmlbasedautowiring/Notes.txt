@@ -1,0 +1,65 @@
+byName:
+--> byName mode bydefault uses setter injection dependency.
+--> byName mode check name and property same or not. If same then it print output.
+EX:
+<bean class="com.xmlbasedautowiring.pojo.Address" id="address">
+        <property name="house_no" value="1123,Kalpataru,Hyderabad" />
+        <property name="city" value="Hyderabad" />
+        <property name="state" value="Telangana" />
+    </bean>
+
+       <!--Byname : name and property should be same-->
+       <bean class="com.xmlbasedautowiring.pojo.Students" id="stdId" autowire="byName">
+           <property name="name" value="ABC"/>
+           <property name="cllg_name" value="MUMU" />
+           <property name="roll_no" value="12" />
+       <  </bean>
+
+byType:
+--> It will check data type bean object is created or not.
+--> byType mode also use setter Injection to inject object.
+--> Address -> bean object
+
+EX: It will check Address (data types) bean object is created or not.
+Edge cases: If we have more than one bean object of same data type then jvm confuge to which one print to solve such issue
+we use one more autowire i.e candidate. Inside autowire candidate we provide true or false value.
+
+EX:
+        <bean class="com.xmlbasedautowiring.pojo.Address" id="addId1">
+             <property name="house_no" value="1123,Kalpataru,Hyderabad" />
+             <property name="city" value="Hyderabad" />
+             <property name="state" value="Telangana" />
+        </bean>
+
+        <bean class="com.xmlbasedautowiring.pojo.Address" id="addId2" autowire-candidate="false">
+            <property name="house_no" value="1123,Kalpataru,Hyderabad" />
+            <property name="city" value="Hyderabad" />
+            <property name="state" value="Telangana" />
+        </bean>
+
+        <bean class="com.xmlbasedautowiring.pojo.Students" id="stdId" autowire="byType">
+            <property name="name" value="ABC"/>
+            <property name="cllg_name" value="MUMU" />
+            <property name="roll_no" value="12" />
+        </bean>
+        Here addId1 participate in autowire configuration but addId2 does not participate in autowire configuration.
+ Constructor:
+ --> Here constructor mode uses constructor injection to achieve autowiring.
+ EX:
+ <Bean class="com.xmlbasedautowiring.pojo.Address" id="addId1">
+    <constructor-arg value="123,highway,Mumbai"/>
+    <constructor-arg value="Mumbai"/>
+    <constructor-arg value="Mah"/>
+ </Bean>
+ <Bean class="com.xmlbasedautowiring.pojo.Address" id="addId2" autowire-candidate="false">
+     <constructor-arg value="012,highway,Nashik"/>
+     <constructor-arg value="Nashik"/>
+     <constructor-arg value="Mah"/>
+  </Bean>
+ <Bean class="com.xmlbasedautowiring.pojo.Students" id="stdId" autowire="constructor">
+    <constructor-arg value="abc" index="0"/>
+    <constructor-arg value="MUMU" index="1"/>
+    <constructor-arg value="112" index="2"/>
+ </Bean>
+ --> Here addId1 participate in autowire configuration but addId2 does not participate in autowire configuration.
+

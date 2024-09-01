@@ -1,0 +1,15 @@
+
+Autowiring:
+Auto: Auto means automatically manages the connection between object.
+Wiring: Wiring means linking those objects together to fulfil dependencies.
+Autowiring can be achieved by:-
+1. Annotation Based Autowiring (here we use @Autowired annotation)
+2. XML Based Autowiring (here we use autowire attribute with modes)
+
+1.@Autowiring:
+= The @Autowired annotation in Spring is used for automatic  dependency injection.
+= It tells spring: "Hey, just grab the right piece(bean) and plug it in here to make this work"
+= In short, it simplifies your code by letting spring handle object connections for you.
+@Qualifier: The @Qualifier annotation in spring helps in spring pick the
+right bean among multiple beans of the same type. It helps spring to know
+which bean you want injected, resolving ambiguity.

@@ -1,0 +1,39 @@
+step-1: create pojo class
+step-2: create java config file
+step-3: Annotate java config file with @Configuration
+step-4: create method inside java config file annotate with @Bean
+        and give the return type of the class of which th object is being creating.
+step-5: use AnnotationConfigApplicationContext(configFile_Location) and provide config file location.
+
+
+--> @Configuration indicates that the class is spring configuration class.
+--> It means that annotated java class contains bean definitions and configuration
+    setting for the spring application context.
+--> @Configuration allows us to define beans and their dependencies in Java-based
+    wat instead of using xml configuration files.
+
+--> In XML configuration, we provide an "id" attribute to specify the bean
+    name, and we specify the "class" name using the class attribute.
+--> In java configuration, the "method name" becomes the default bean name,
+    and the "return type" of the method determine the class of the object that
+    be created as the bean.
+
+--> The @Bean annotation in spring is used to declare a method as a factory
+    for creating and configuration a bean managed by the spring container.
+--> The object created by the stdId() method, which is annotated with @Bean
+    is managed and created by the spring container.
+--> When the spring container initializes, it will invoke this method to
+    create the Student object.
+
+--> The method annotated with @Bean will:
+      = Create a new Student object.
+      = Configure the Student object, setting its properties using setxxx methods.
+      = The default bean name for this method will be "stdId1", which is the same
+        as the method name
+      = Return the configured Student object.
+
+--> The ApplicationContext (Spring Container) is an interface in Spring which is used
+    to manage beans, handle application events, and access resources
+--> Some implemented classes of ApplicationContext are:-
+       1. ClassPathXmlApplicationContext(used for XML configuration)
+       2. AnnotationConfigApplicationContext(used for java configurations)
